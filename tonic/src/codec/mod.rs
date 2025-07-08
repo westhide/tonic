@@ -9,6 +9,8 @@ mod decode;
 mod encode;
 #[cfg(feature = "prost")]
 mod prost;
+#[cfg(feature = "rkyv")]
+mod rkyv;
 
 use crate::Status;
 use std::io;
@@ -19,6 +21,8 @@ pub use self::decode::Streaming;
 pub use self::encode::EncodeBody;
 #[cfg(feature = "prost")]
 pub use self::prost::ProstCodec;
+#[cfg(feature = "rkyv")]
+pub use self::rkyv::RkyvCodec;
 
 /// Unless overridden, this is the buffer size used for encoding requests.
 /// This is spent per-rpc, so you may wish to adjust it. The default is

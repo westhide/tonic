@@ -31,6 +31,7 @@ mod server;
 mod code_gen;
 pub use code_gen::CodeGenBuilder;
 
+#[cfg(feature = "prost")]
 mod compile_settings;
 
 /// Service generation trait.

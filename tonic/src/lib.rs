@@ -116,6 +116,10 @@ mod util;
 #[cfg(feature = "codegen")]
 pub use async_trait::async_trait;
 
+/// A re-export of [`rkyv`](https://docs.rs/rkyv) for use with codec codegen.
+#[cfg(feature = "rkyv")]
+pub use rkyv;
+
 #[doc(inline)]
 pub use codec::Streaming;
 pub use extensions::GrpcMethod;

@@ -25,6 +25,7 @@ syn = "2.0"
 [features]
 default = ["transport", "prost"]
 prost = ["prost-build", "dep:prost-types"]
+rkyv = []
 cleanup-markdown = ["prost-build?/cleanup-markdown"]
 transport = []
 

@@ -697,6 +697,12 @@ impl Builder {
             config.protoc_arg(arg);
         }
 
+        if cfg!(feature = "rkyv") {
+            let rkyv_attr =
+                "#[derive(tonic::rkyv::Archive, tonic::rkyv::Deserialize, tonic::rkyv::Serialize)]";
+            config.type_attribute(".", rkyv_attr);
+        }
+
         config.service_generator(self.service_generator());
     }
 

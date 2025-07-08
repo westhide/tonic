@@ -26,6 +26,7 @@ deflate = ["dep:flate2"]
 zstd = ["dep:zstd"]
 default = ["router", "transport", "codegen", "prost"]
 prost = ["dep:prost"]
+rkyv = ["dep:rkyv"]
 _tls-any = ["dep:tokio-rustls", "dep:tokio", "tokio?/rt", "tokio?/macros"] # Internal. Please choose one of `tls-ring` or `tls-aws-lc`
 tls-ring = ["_tls-any", "tokio-rustls/ring"]
 tls-aws-lc = ["_tls-any", "tokio-rustls/aws-lc-rs"]
@@ -70,6 +71,9 @@ tokio-stream = {version = "0.1.16", default-features = false}
 
 # prost
 prost = {version = "0.14", default-features = false, features = ["std"], optional = true}
+
+# codec
+rkyv = { version = "0.8", features = ["unaligned"], optional = true }
 
 # codegen
 async-trait = {version = "0.1.13", optional = true}
